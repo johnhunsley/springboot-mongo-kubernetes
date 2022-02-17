@@ -14,7 +14,7 @@ import javax.servlet.Filter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
-@Configuration
+//@Configuration
 public class OpenApiValidationConfig {
   @Bean
   public Filter validationFilter() {
@@ -25,7 +25,7 @@ public class OpenApiValidationConfig {
   }
 
   @Bean
-  public WebMvcConfigurer addOpenApiValidationInterceptor(@Value("classpath:example-oai-3.0.0.json")
+  public WebMvcConfigurer addOpenApiValidationInterceptor(@Value("classpath:snacks-oai-3.0.0.json")
               final Resource apiSpecification) throws IOException {
     final EncodedResource specResource = new EncodedResource(apiSpecification, StandardCharsets.UTF_8);
     final OpenApiValidationInterceptor openApiValidationInterceptor = new OpenApiValidationInterceptor(specResource);
