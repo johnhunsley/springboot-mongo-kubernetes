@@ -14,7 +14,7 @@ import javax.servlet.Filter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
-//@Configuration
+@Configuration
 public class OpenApiValidationConfig {
   @Bean
   public Filter validationFilter() {
