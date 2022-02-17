@@ -26,8 +26,28 @@
 		{
 			"name": "Add Snacks",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"identifier\": 199,\n    \"ottersNoses\": 12,\n    \"larksTongues\": 4\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/snacks",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"snacks"
+					]
+				}
 			},
 			"response": []
 		},
@@ -37,14 +57,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/snacks/100",
+					"raw": "localhost:8080/snacks/199",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"snacks",
-						"100"
+						"199"
 					]
 				}
 			},
