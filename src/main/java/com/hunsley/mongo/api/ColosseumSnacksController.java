@@ -3,12 +3,11 @@ package com.hunsley.mongo.api;
 import com.hunsley.mongo.model.ColosseumSnacks;
 import com.hunsley.mongo.repo.ColosseumSnacksRepository;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,7 +35,10 @@ public class ColosseumSnacksController {
   }
 
   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-  public ColosseumSnacks getSnacksById(@PathVariable(name = "id") Long id) throws NotFoundException {
-    return colosseumSnacksRepository.findById(id).orElseThrow(NotFoundException::new);
+  public ResponseEntity<ColosseumSnacks> getSnacksById(@PathVariable(name = "id") Long id)  {
+    Optional<ColosseumSnacks> result =  colosseumSnacksRepository.findById(id);
+
+    return result.map(colosseumSnacks -> new ResponseEntity(colosseumSnacks, HttpStatus.OK))
+        .orElseGet(() -> new ResponseEntity(HttpStatus.NOT_FOUND));
   }
 }
