@@ -35,7 +35,7 @@ public class ColosseumSnacksController {
   }
 
   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-  public ResponseEntity<ColosseumSnacks> getSnacksById(@PathVariable(name = "id") Long id)  {
+  public ResponseEntity<ColosseumSnacks> getSnacksById(@PathVariable(name = "id") final Long id)  {
     Optional<ColosseumSnacks> result =  colosseumSnacksRepository.findById(id);
 
     return result.map(colosseumSnacks -> new ResponseEntity(colosseumSnacks, HttpStatus.OK))
