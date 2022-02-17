@@ -20,7 +20,7 @@ Create and start a mongodb on host port 27888 outside of Kubernetes:
 * spring-boot:mvn run
 
 Send in some POST requests and populate the mongodb to localhost:8080/snacks e.g.
-```aidl
+```json
    {
         "identifier": 100,
         "ottersNoses": 2,
