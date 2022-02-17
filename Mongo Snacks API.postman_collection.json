@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "0af06e0e-23c5-4378-abf8-723336024105",
+		"name": "Mongo Snacks API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Snacks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/snacks",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"snacks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Snacks",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get Snacks By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/snacks/100",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"snacks",
+						"100"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
