@@ -12,10 +12,10 @@ We can run the app locally using the conventional application.properties contain
 details.
 
 ## Run locally without Kubernetes
-Create and start a mongodb on host port 27888 outside of Kubernetes:
+Create and start a mongodb on host port 27017 outside of Kubernetes:
 
 * docker pull mongo
-* docker run -d  --name mongo-on-docker  -p 27888:27017 -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e 
+* docker run -d  --name mongo-on-docker  -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e 
   MONGO_INITDB_ROOT_PASSWORD=secret mongo
 * spring-boot:mvn run
 
