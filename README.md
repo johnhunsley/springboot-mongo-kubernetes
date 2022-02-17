@@ -11,7 +11,7 @@ OpenAPI is used to generate a swagger doc which is stored in config to validate 
 We can run the app locally using the conventional application.properties containing plain text creds and db connection
 details.
 
-##Run locally without Kubernetes
+## Run locally without Kubernetes
 Create and start a mongodb on host port 27888 outside of Kubernetes:
 
 * docker pull mongo
@@ -32,4 +32,4 @@ Send in some POST requests and populate the mongodb to localhost:8080/snacks e.g
 
 Read them back with a GET request to localhost:8080/snacks
 
-##Run in Kubernetes
+## Run in Kubernetes
