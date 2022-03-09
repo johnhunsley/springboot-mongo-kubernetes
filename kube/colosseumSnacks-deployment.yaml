@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: colosseum-snacks-app
-          image: colosseum-snacks-app:latest
-          imagePullPolicy: Never
+          image: springboot-mongo-kubernetes:0.0.1-SNAPSHOT
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           env:
