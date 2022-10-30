@@ -3,22 +3,27 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: demo
-  name: demo
+    app: colosseum-snacks
+  name: colosseum-snacks
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: demo
+      app: colosseum-snacks
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: demo
+        app: colosseum-snacks
     spec:
       containers:
         - image: johnhunsley/springboot-mongo-kubernetes
-          name: springboot-mongo-kubernetes
-          resources: {}
+          name: colosseum-snacks
+          env:
+            - name: SPRING_APPLICATION_PROPERTIES
+              valueFrom:
+                configMapKeyRef:
+                  name: colosseum-snacks-config
+                  key: application.properties
 status: {}

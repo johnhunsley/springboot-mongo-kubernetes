@@ -3,8 +3,8 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: demo
-  name: demo
+    app: colosseum-snacks
+  name: colosseum-snacks
 spec:
   ports:
     - name: 8080-8080
@@ -12,7 +12,7 @@ spec:
       protocol: TCP
       targetPort: 8080
   selector:
-    app: demo
+    app: colosseum-snacks
   type: ClusterIP
 status:
   loadBalancer: {}
