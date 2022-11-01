@@ -24,6 +24,6 @@ spec:
             - name: SPRING_APPLICATION_PROPERTIES
               valueFrom:
                 configMapKeyRef:
-                  name: colosseum-snacks-config
+                  name: colosseum-snacks
                   key: application.properties
 status: {}

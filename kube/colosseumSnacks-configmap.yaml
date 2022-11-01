@@ -1,25 +1,11 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: colosseum-snacks-config
-  namespace: default
-  uid: 2579eedc-d886-4f4b-90cf-684d282ae745
-  resourceVersion: '52127'
-  creationTimestamp: '2022-10-27T21:45:06Z'
-  managedFields:
-    - manager: kubectl-create
-      operation: Update
-      apiVersion: v1
-      time: '2022-10-27T21:45:06Z'
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:data:
-          .: {}
-          f:application.properties: {}
+  name: colosseum-snacks
 data:
-  application.properties:
+  application.properties: |-
     springdoc.api-docs.path=/api-docs
-    spring.data.mongodb.host=mongodb-service
+    spring.data.mongodb.host=mongo-service
     spring.data.mongodb.port=27017
     spring.data.mongodb.database=admin
     spring.data.mongodb.username=${MONGO_USERNAME}
