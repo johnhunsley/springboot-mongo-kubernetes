@@ -6,7 +6,7 @@ metadata:
 # Grant access to configmaps for external configuration
 rules:
   - apiGroups: [""]
-    resources: ["configmaps"]
+    resources: ["secrets", "configmaps"]
     verbs: ["get"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1

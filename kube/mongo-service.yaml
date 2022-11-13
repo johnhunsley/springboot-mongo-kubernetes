@@ -3,7 +3,7 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: mongo-service
+    app: mongo
   name: mongo-service
 spec:
   ports:
@@ -13,4 +13,3 @@ spec:
       targetPort: 27017
   selector:
     app: mongo
-  type: ClusterIP

@@ -59,11 +59,11 @@
 			<artifactId>swagger-request-validator-springmvc</artifactId>
 			<version>2.24.0</version>
 		</dependency>
-		<dependency>
-			<groupId>com.congta.spring</groupId>
-			<artifactId>congta-spring-boot-nacos-starter</artifactId>
-			<version>0.0.7</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.congta.spring</groupId>-->
+<!--			<artifactId>congta-spring-boot-nacos-starter</artifactId>-->
+<!--			<version>0.0.7</version>-->
+<!--		</dependency>-->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

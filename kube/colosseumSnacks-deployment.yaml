@@ -20,10 +20,21 @@ spec:
       containers:
         - image: johnhunsley/springboot-mongo-kubernetes
           name: colosseum-snacks
+          ports:
+            - containerPort: 8080
           env:
             - name: SPRING_APPLICATION_PROPERTIES
               valueFrom:
                 configMapKeyRef:
                   name: colosseum-snacks
                   key: application.properties
-status: {}
+            - name: MONGO_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: username
+            - name: MONGO_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: password
