@@ -1,0 +1,30 @@
+image: docker:latest
+
+stages:
+  - build
+  - image-push
+
+build-maven-project:
+  image: maven:3-openjdk-11
+  stage: build
+  script:
+    mvn clean package
+  artifacts:
+    untracked: false
+    expire_in: 30 days
+    paths:
+      - "target/"
+
+build-push-docker-image:
+  image: docker:stable
+  stage: image-push
+  services:
+    - docker:dind
+  variables:
+    DOCKER_HOST: "tcp://docker:2375"
+    DOCKER_TLS_CERTDIR: ""
+  before_script:
+    - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+  script:
+    - docker build -t johnhunsley/springboot-mongo-kubernetes .
+    - docker push johnhunsley/springboot-mongo-kubernetes
